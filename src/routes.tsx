@@ -1,25 +1,28 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
+import { createBrowserRouter } from "react-router-dom";
 
-import { HomePage, DestinationPage, CrewPage, TechnologyPage } from "./pages";
-import { GlobalStyle } from "./styles/globalStyles";
-import { theme } from "./styles/theme";
+import { Layout } from "./components/Layout";
+import { Home, Destination, Technology, Crew } from "./pages";
 
-const ConfigureRoutes = () => {
-	return (
-		<ThemeProvider theme={theme}>
-			<GlobalStyle />
-
-			<BrowserRouter>
-				<Routes>
-					<Route path="/" element={<HomePage />} />
-					<Route path="/destination" element={<DestinationPage />} />
-					<Route path="/crew" element={<CrewPage />} />
-					<Route path="/technology" element={<TechnologyPage />} />
-				</Routes>
-			</BrowserRouter>
-		</ThemeProvider>
-	);
-};
-
-export default ConfigureRoutes;
+export const Router = createBrowserRouter([
+	{
+		element: <Layout />,
+		children: [
+			{
+				path: "/",
+				element: <Home />,
+			},
+			{
+				path: "/destination",
+				element: <Destination />,
+			},
+			{
+				path: "/technology",
+				element: <Technology />,
+			},
+			{
+				path: "/crew",
+				element: <Crew />,
+			},
+		],
+	},
+]);

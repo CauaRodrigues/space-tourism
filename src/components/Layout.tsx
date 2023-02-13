@@ -1,16 +1,13 @@
-import React, { Fragment, ReactNode } from "react";
+import React, { Fragment } from "react";
+import { Outlet } from "react-router-dom";
 import { Header } from "./Header";
 
-type Props = {
-	children: ReactNode;
-};
-
-export const Layout: React.FC<Props> = ({ children }) => {
+export const Layout: React.FC = () => {
 	return (
 		<Fragment>
 			<Header />
 
-			{children}
+			<Outlet />
 		</Fragment>
 	);
 };
