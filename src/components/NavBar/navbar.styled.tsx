@@ -16,7 +16,8 @@ export const Menu = styled.nav`
 		width: 100%;
 		display: flex;
 		align-items: center;
-		justify-content: space-around;
+		justify-content: center;
+		gap: 6rem;
 	}
 
 	li.nav-text a {

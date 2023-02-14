@@ -1,12 +1,15 @@
 import styled from "styled-components";
-import BgImage from "../../assets/home/background-home-desktop.jpg";
 
-export const ContainerMain = styled.main`
+interface Props {
+	image: string;
+}
+
+export const ContainerMain = styled.main<Props>`
 	width: 100%;
 	height: 100vh;
 	padding: 12px 0;
 
-	background-image: url(${BgImage});
+	background-image: url(${(props) => props.image});
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;

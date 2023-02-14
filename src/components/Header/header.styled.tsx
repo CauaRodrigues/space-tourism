@@ -7,19 +7,20 @@ export const Header = styled.header`
 	align-items: center;
 
 	.content {
-		width: 95%;
+		width: 96%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		gap: 1rem;
 	}
 
 	.divider {
-		width: 40%;
+		width: 32%;
 		padding: 1px;
 		opacity: 0.25;
 		background-color: ${(props) => props.theme.colors.primary};
 		position: relative;
-		left: 32px;
+		left: 42px;
 		z-index: 10;
 	}
 `;
