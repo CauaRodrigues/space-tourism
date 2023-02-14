@@ -10,7 +10,6 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     border: 0;
-    font-family: 'Barlow', sans-serif;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     text-decoration: none;
@@ -41,13 +40,13 @@ export const GlobalStyle = createGlobalStyle`
 
   span.sub--1 { font-size: ${({ theme }) => theme.textSize.sub1}px;}
   span.sub--2 { font-size: ${({ theme }) => theme.textSize.sub2}px;}
-  span.nav-text { font-size: ${({ theme }) => theme.textSize.navText}px;}
+  li.nav-text { font-size: ${({ theme }) => theme.textSize.navText}px;}
 
   h1, h2, h3, h4, span.sub--1 {
     font-family: 'Bellefair', serif;
   }
 
-  h5, span.sub--2, span.nav-text {
+  h5, span.sub--2, li.nav-text {
     font-family: 'Barlow Condensed', sans-serif;
   }
 

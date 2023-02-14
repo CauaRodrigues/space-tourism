@@ -6,7 +6,7 @@ export const theme: DefaultTheme = {
 		bg: "#0B0D17",
 		primary: "#ffff",
 		text: "#D0D6F9",
-		blurEffect: "rgba(255, 255, 255, 0.04)",
+		blurEffect: "rgba(255, 255, 255, 0.315)",
 	},
 	textSize: {
 		h1: 150,
