@@ -1,10 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useMatches } from "react-router-dom";
 
-import { Menu } from "./navbar.styled";
+import { ItemLink, Menu } from "./navbar.styled";
 import { LinksTypes } from "../../@types/links";
 
 export const NavBar: React.FC = () => {
+	const [, { pathname }] = useMatches();
+
 	const links: LinksTypes[] = [
 		{ name: "home", path: "/" },
 		{ name: "destination", path: "/destination" },
@@ -17,12 +19,14 @@ export const NavBar: React.FC = () => {
 			<ul>
 				{links
 					? links.map(({ name, path }, index) => {
+							let active = pathname === path;
+
 							return (
-								<li className="nav-text" key={index}>
+								<ItemLink className="nav-text" active={active} key={index}>
 									<Link to={path}>
-										0{index} {name}
+										<span>0{index}</span> {name}
 									</Link>
-								</li>
+								</ItemLink>
 							);
 					  })
 					: null}
@@ -30,18 +34,3 @@ export const NavBar: React.FC = () => {
 		</Menu>
 	);
 };
-
-// {
-// 	/* <li className="nav-text">
-// 	<Link to="/">00 home</Link>
-// </li>
-// <li className="nav-text">
-// 	<Link to="/destination">01 destination</Link>
-// </li>
-// <li className="nav-text">
-// 	<Link to="/crew">02 crew</Link>
-// </li>
-// <li className="nav-text">
-// 	<Link to="/technology">03 technology</Link>
-// </li> */
-// }

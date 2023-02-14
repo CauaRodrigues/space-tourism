@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Header = styled.header`
 	width: 100%;
+	margin: 1.5rem 0;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
