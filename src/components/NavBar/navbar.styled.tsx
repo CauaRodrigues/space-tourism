@@ -5,8 +5,7 @@ interface Props {
 }
 
 export const Menu = styled.nav`
-	flex: 1;
-
+	flex-grow: 1;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -21,11 +20,22 @@ export const Menu = styled.nav`
 		align-items: center;
 		justify-content: center;
 		gap: 5rem;
+
+		@media (max-width: 1000px) {
+			gap: 0;
+			justify-content: space-around;
+			padding: 0 12px;
+		}
+	}
+
+	@media (max-width: 1000px) {
+		flex-grow: 0;
+		width: 65%;
 	}
 `;
 
 export const ItemLink = styled.li<Props>`
-	padding: 1.8rem 12px;
+	padding: 1.8rem 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

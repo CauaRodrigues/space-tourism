@@ -6,8 +6,8 @@ interface Props {
 
 export const ContainerMain = styled.main<Props>`
 	width: 100%;
-	height: 100vh;
-	padding: 12px 0;
+	min-height: 100vh;
+	padding: 1rem 0;
 
 	background-image: url(${(props) => props.image});
 	background-position: center;

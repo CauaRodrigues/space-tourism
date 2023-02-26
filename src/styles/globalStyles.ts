@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     border: 0;
-    line-height: 1;
+    line-height: 1.2;
     -webkit-font-smoothing: antialiased;
     text-decoration: none;
   }
@@ -32,11 +32,19 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   /* Texts and fonts */
-  h1 { font-size: ${({ theme: { textSize } }) => textSize.h1}px; }
+  h1 { 
+    font-size: min(9rem, 18vw);
+    font-weight: 400;
+  }
+
   h2 { font-size: ${({ theme: { textSize } }) => textSize.h2}px; }
   h3 { font-size: ${({ theme: { textSize } }) => textSize.h3}px; }
   h4 { font-size: ${({ theme: { textSize } }) => textSize.h4}px; }
-  h5 { font-size: ${({ theme: { textSize } }) => textSize.h5}px; }
+  
+  h5 { 
+    font-size: min(1.7rem, 3vw); 
+    font-weight: 300;
+  }
 
   span.sub--1 { font-size: ${({ theme }) => theme.textSize.sub1}px;}
   span.sub--2 { font-size: ${({ theme }) => theme.textSize.sub2}px;}
@@ -52,6 +60,7 @@ export const GlobalStyle = createGlobalStyle`
 
   p {
     font-family: 'Barlow', sans-serif;
-    font-size: ${({ theme: { textSize } }) => textSize.bodyText}px;
+    font-size: min(1.1rem, 2vw);
+    font-weight: 300;
   }
 `;
