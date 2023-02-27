@@ -33,7 +33,7 @@ export const GlobalStyle = createGlobalStyle`
 
   /* Texts and fonts */
   h1 { 
-    font-size: min(9rem, 18vw);
+    font-size: min(9rem, 19vw);
     font-weight: 400;
   }
 
@@ -42,7 +42,7 @@ export const GlobalStyle = createGlobalStyle`
   h4 { font-size: ${({ theme: { textSize } }) => textSize.h4}px; }
   
   h5 { 
-    font-size: min(1.7rem, 3vw); 
+    font-size: min(2rem, 5vw); 
     font-weight: 300;
   }
 
@@ -60,7 +60,7 @@ export const GlobalStyle = createGlobalStyle`
 
   p {
     font-family: 'Barlow', sans-serif;
-    font-size: min(1.1rem, 2vw);
+    font-size: min(1.2rem, 3.5vw);
     font-weight: 300;
   }
 `;

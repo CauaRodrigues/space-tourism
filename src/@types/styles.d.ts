@@ -21,5 +21,9 @@ declare module "styled-components" {
 			navText: number | string;
 			bodyText: number | string;
 		};
+		sizes: {
+			tablet: number;
+			mobile: number;
+		};
 	}
 }

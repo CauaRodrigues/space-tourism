@@ -21,14 +21,14 @@ export const Menu = styled.nav`
 		justify-content: center;
 		gap: 5rem;
 
-		@media (max-width: 1000px) {
+		@media (max-width: ${(props) => props.theme.sizes.tablet}px) {
 			gap: 0;
 			justify-content: space-around;
 			padding: 0 12px;
 		}
 	}
 
-	@media (max-width: 1000px) {
+	@media (max-width: ${(props) => props.theme.sizes.tablet}px) {
 		flex-grow: 0;
 		width: 65%;
 	}

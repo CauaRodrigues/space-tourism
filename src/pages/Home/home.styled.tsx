@@ -12,10 +12,17 @@ export const ContainerHome = styled.article`
 
 	section.hero {
 		width: 450px;
+
+		@media (max-width: ${(props) => props.theme.sizes.tablet}px) {
+			text-align: center;
+			padding: 24px;
+			margin: 12px 0;
+		}
 	}
 
 	section.container-button {
 		min-width: 20%;
+		margin: 12px;
 		display: flex;
 		align-items: center;
 		justify-content: center;

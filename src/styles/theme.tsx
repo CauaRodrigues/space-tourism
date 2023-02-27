@@ -19,4 +19,8 @@ export const theme: DefaultTheme = {
 		navText: 16,
 		bodyText: 18,
 	},
+	sizes: {
+		tablet: 1000,
+		mobile: 500,
+	},
 };
