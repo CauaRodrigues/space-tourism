@@ -26,7 +26,7 @@ export const NavBar: React.FC = () => {
 								<ItemLink className="nav-text" active={active} key={index}>
 									<Link to={path}>
 										<MediaQuery minWidth={1000}>
-											<span>0{index} </span>
+											<span className="stage">0{index} </span>
 										</MediaQuery>
 										{name}
 									</Link>

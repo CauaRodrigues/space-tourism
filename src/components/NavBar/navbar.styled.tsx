@@ -69,14 +69,7 @@ export const ItemLink = styled.li<Props>`
 	}}
 
 	a {
-		text-transform: uppercase;
-		font-size: min(1.1rem, 3vw);
-		font-weight: 500;
 		word-spacing: 4px;
 		color: ${(props) => props.theme.colors.primary};
-
-		span {
-			font-weight: 700;
-		}
 	}
 `;

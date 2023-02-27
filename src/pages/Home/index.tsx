@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonExplore, ContainerHome } from "./home.styled";
+import { ButtonExplore, ContainerHome } from "./page.styled";
 import { Link } from "react-router-dom";
 
 const Home: React.FC = () => {
