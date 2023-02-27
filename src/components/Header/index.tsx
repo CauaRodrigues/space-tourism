@@ -4,6 +4,7 @@ import MediaQuery from "react-responsive";
 import { Header as HeaderComponent } from "./header.styled";
 import { NavBar } from "../NavBar";
 import { ReactComponent as Logo } from "../../assets/shared/logo.svg";
+import { ReactComponent as Menu } from "../../assets/shared/icon-hamburger.svg";
 
 export const Header: React.FC = () => {
 	return (
@@ -20,7 +21,7 @@ export const Header: React.FC = () => {
 				</MediaQuery>
 
 				<MediaQuery maxWidth={500}>
-					<button>Menu</button>
+					<Menu className="menuHamburguer" />
 				</MediaQuery>
 			</div>
 		</HeaderComponent>

@@ -28,4 +28,8 @@ export const Header = styled.header`
 		left: 42px;
 		z-index: 10;
 	}
+
+	.menuHamburguer {
+		margin-right: 2rem;
+	}
 `;
