@@ -16,7 +16,7 @@ export const Header: React.FC = () => {
 					<span className="divider"></span>
 				</MediaQuery>
 
-				<MediaQuery minWidth={500}>
+				<MediaQuery minWidth={501}>
 					<NavBar />
 				</MediaQuery>
 

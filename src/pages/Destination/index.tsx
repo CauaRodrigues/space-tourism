@@ -1,5 +1,12 @@
 import React from "react";
-import { ContainerDestination } from "./page.styled";
+import {
+	ContainerDestination,
+	Description,
+	Tab,
+	Tabs,
+	PlanetImage,
+	AdditionalInfo,
+} from "./page.styled";
 import Moon from "../../assets/destination/image-moon.webp";
 
 const Destination: React.FC = () => {
@@ -10,32 +17,34 @@ const Destination: React.FC = () => {
 			</h5>
 
 			<section className="content">
-				<figure>
+				<PlanetImage>
 					<img src={Moon} alt="Destination: Moon" />
-				</figure>
+				</PlanetImage>
 
-				<div>
-					<nav>
+				<div className="content--info">
+					<Tabs>
 						<ul>
-							<li className="nav-text">Moon</li>
-							<li className="nav-text">Mars</li>
-							<li className="nav-text">Europa</li>
-							<li className="nav-text">Titan</li>
+							<Tab className="nav-text">Moon</Tab>
+							<Tab className="nav-text">Mars</Tab>
+							<Tab className="nav-text">Europa</Tab>
+							<Tab className="nav-text">Titan</Tab>
 						</ul>
-					</nav>
+					</Tabs>
 
-					<h2>Moon</h2>
+					<Description>
+						<h2>Moon</h2>
 
-					<p>
-						See our planet as you’ve never seen it before. A perfect relaxing
-						trip away to help regain perspective and come back refreshed. While
-						you’re there, take in some history by visiting the Luna 2 and Apollo
-						11 landing sites.
-					</p>
+						<p>
+							See our planet as you’ve never seen it before. A perfect relaxing
+							trip away to help regain perspective and come back refreshed.
+							While you’re there, take in some history by visiting the Luna 2
+							and Apollo 11 landing sites.
+						</p>
+					</Description>
 
 					<span className="line--divider"></span>
 
-					<div className="group__additional-info">
+					<AdditionalInfo>
 						<div className="info">
 							<span className="sub--2">AVG. DISTANCE</span>
 							<span className="sub--1">384,400 km</span>
@@ -45,7 +54,7 @@ const Destination: React.FC = () => {
 							<span className="sub--2">Est. travel time</span>
 							<span className="sub--1">3 days</span>
 						</div>
-					</div>
+					</AdditionalInfo>
 				</div>
 			</section>
 		</ContainerDestination>

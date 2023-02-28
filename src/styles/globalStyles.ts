@@ -56,13 +56,18 @@ export const GlobalStyle = createGlobalStyle`
   h4 { font-size: ${({ theme: { textSize } }) => textSize.h4}px; }
 
   span.sub--1 {
+    color: ${({ theme }) => theme.colors.primary};
     text-transform: uppercase;
-    font-size: ${({ theme }) => theme.textSize.sub1}px;
+    font-weight: 400;
+    font-size: min(2rem, 4vw);
   }
 
   span.sub--2 {
+    color: ${({ theme }) => theme.colors.text};
     text-transform: uppercase;
-    font-size: ${({ theme }) => theme.textSize.sub2}px;
+    font-size: min(0.9rem, 2vw);
+    font-weight: 400;
+    letter-spacing: 2.3625px;
   }
 
   p {
