@@ -18,6 +18,10 @@ export const ContainerHome = styled.article`
 			padding: 24px;
 			margin: 12px 0;
 		}
+
+		h5 {
+			color: ${(props) => props.theme.colors.text};
+		}
 	}
 
 	section.container-button {

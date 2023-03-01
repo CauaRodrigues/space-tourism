@@ -7,9 +7,10 @@ export const ContainerDestination = styled.article`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	gap: 4rem;
 
 	h5 {
-		width: 80%;
+		width: 70%;
 
 		.stage {
 			opacity: 0.25;
@@ -17,31 +18,32 @@ export const ContainerDestination = styled.article`
 	}
 
 	section.content {
-		width: 80%;
-		margin: 2rem 0;
-
+		width: 75%;
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
 
 		.content--info {
-			width: 100%;
+			width: 40%;
+
 			display: flex;
 			flex-direction: column;
-			justify-content: space-between;
+			justify-content: space-evenly;
 			align-items: center;
 
 			span.line--divider {
 				width: 100%;
 				padding: 1px;
-				background-color: ${(props) => props.theme.colors.primary};
+				background-color: ${(props) => props.theme.colors.divider};
 			}
 		}
 	}
 `;
 
 export const PlanetImage = styled.figure`
-	width: 100%;
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 `;
 
 export const Tabs = styled.nav`
@@ -53,12 +55,12 @@ export const Tabs = styled.nav`
 	}
 `;
 
-export const Tab = styled.li``;
+export const Tab = styled.li`
+	color: ${({ theme }) => theme.colors.text};
+`;
 
 export const Description = styled.div`
-	border: 1px solid green;
 	width: 100%;
-	margin: 24px 0;
 `;
 
 export const AdditionalInfo = styled.div`

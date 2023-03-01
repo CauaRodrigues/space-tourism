@@ -52,8 +52,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
 
-  h3 { font-size: ${({ theme: { textSize } }) => textSize.h3}px; }
-  h4 { font-size: ${({ theme: { textSize } }) => textSize.h4}px; }
+  h3 { font-size: ${({ theme: { textSize } }) => textSize?.h3}px; }
+  h4 { font-size: ${({ theme: { textSize } }) => textSize?.h4}px; }
 
   span.sub--1 {
     color: ${({ theme }) => theme.colors.primary};
@@ -72,8 +72,10 @@ export const GlobalStyle = createGlobalStyle`
 
   p {
     font-family: 'Barlow', sans-serif;
-    font-size: min(1.2rem, 3.5vw);
-    font-weight: 300;
+    font-size: min(1.1rem, 3.5vw);
+    font-weight: 400;
+    line-height: 32px;
+    color: ${({ theme }) => theme.colors.text};
   }
 
   span.stage {
@@ -86,7 +88,6 @@ export const GlobalStyle = createGlobalStyle`
 		font-size: min(1.1rem, 3vw);
 		font-weight: 400;
     letter-spacing: 1.7px;
-    color: ${(props) => props.theme.colors.primary};
   }
 
   h1, h2, h3, h4, span.sub--1 {

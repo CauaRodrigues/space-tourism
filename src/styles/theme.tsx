@@ -7,6 +7,7 @@ export const theme: DefaultTheme = {
 		primary: "#ffff",
 		text: "#D0D6F9",
 		blurEffect: "rgba(255, 255, 255, 0.06)",
+		divider: "#383B4B",
 	},
 	textSize: {
 		h1: 150,

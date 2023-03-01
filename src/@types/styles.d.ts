@@ -9,8 +9,9 @@ declare module "styled-components" {
 			primary: string;
 			text: string;
 			blurEffect: string;
+			divider: string;
 		};
-		textSize: {
+		textSize?: {
 			h1: number | string;
 			h2: number | string;
 			h3: number | string;
