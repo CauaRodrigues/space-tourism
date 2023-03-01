@@ -20,7 +20,12 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${(props) => props.theme.colors.bg};
     color: ${(props) => props.theme.colors.primary};
   }
-  
+
+  ::-webkit-scrollbar {
+    display: none;
+    background-color: transparent;
+  }
+
   ul,
   li {
     list-style: none;
@@ -74,7 +79,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Barlow', sans-serif;
     font-size: min(1.1rem, 3.5vw);
     font-weight: 400;
-    line-height: 32px;
+    line-height: min(32px, 6vw);
     color: ${({ theme }) => theme.colors.text};
   }
 

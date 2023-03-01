@@ -1,8 +1,5 @@
 import styled from "styled-components";
-
-interface Props {
-	active: boolean;
-}
+import { Props } from "../../@types/activeProps";
 
 export const Menu = styled.nav`
 	flex-grow: 1;

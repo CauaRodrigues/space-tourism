@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Props } from "../../@types/activeProps";
 
 export const ContainerDestination = styled.article`
 	width: 100%;
@@ -55,8 +56,38 @@ export const Tabs = styled.nav`
 	}
 `;
 
-export const Tab = styled.li`
+export const Tab = styled.li<Props>`
+	display: flex;
+	flex-direction: column;
 	color: ${({ theme }) => theme.colors.text};
+
+	&::after {
+		content: " ";
+		width: 100%;
+		padding: 1.05px;
+		position: relative;
+		top: 10px;
+	}
+
+	${(props) => {
+		if (props.active) {
+			return `
+				color: ${props.theme.colors.primary};
+				&::after {
+					background: ${props.theme.colors.primary};
+				}
+			`;
+		}
+		return `
+			&:hover {
+				cursor: pointer;
+				&::after {
+					background: ${props.theme.colors.primary};
+					opacity: 0.5;
+				}
+			}
+		`;
+	}}
 `;
 
 export const Description = styled.div`
