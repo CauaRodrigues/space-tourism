@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Destiny } from "../../@types/destination";
 import { data } from "./data";
+import { useNavigate, useParams } from "react-router-dom";
 
 import {
 	ContainerDestination,
@@ -12,12 +13,26 @@ import {
 } from "./page.styled";
 
 const Destination: React.FC = () => {
+	const { destiny } = useParams();
+	const navigate = useNavigate();
 	const [Moon, Mars, Europa, Titan] = data;
-	const [destination, setDestination] = useState<Destiny>(Moon);
+	const [destination, setDestination] = useState<Destiny>(() => {
+		switch (destiny?.toLowerCase()) {
+			case "mars":
+				return Mars;
+			case "europa":
+				return Europa;
+			case "titan":
+				return Titan;
+			default:
+				return Moon;
+		}
+	});
 
 	const handlerDestination = (destiny: Destiny) => {
 		if (destiny) {
 			setDestination(destiny);
+			navigate(`/destination/${destiny.name.toLowerCase()}`);
 		}
 	};
 
@@ -30,7 +45,7 @@ const Destination: React.FC = () => {
 			<section className="content">
 				<PlanetImage>
 					<img
-						src={destination.images.webp}
+						src={destination.imageUrl}
 						alt={`Destination: ${destination.name}`}
 					/>
 				</PlanetImage>

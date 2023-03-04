@@ -13,15 +13,31 @@ export const ContainerDestination = styled.article`
 	h5 {
 		width: 70%;
 
+		@media (max-width: 1082px) {
+			width: 95%;
+		}
+
 		.stage {
 			opacity: 0.25;
 		}
 	}
 
 	section.content {
-		width: 75%;
+		width: 80%;
 		display: flex;
 		justify-content: space-between;
+
+		@media (max-width: 1082px) {
+			width: 80%;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 3rem;
+		}
+
+		@media (max-width: 700px) {
+			width: 100%;
+		}
 
 		.content--info {
 			width: 40%;
@@ -30,6 +46,14 @@ export const ContainerDestination = styled.article`
 			flex-direction: column;
 			justify-content: space-evenly;
 			align-items: center;
+
+			@media (max-width: 1082px) {
+				width: 90%;
+				text-align: center;
+				justify-content: center;
+				align-items: center;
+				gap: 2rem;
+			}
 
 			span.line--divider {
 				width: 100%;
@@ -50,6 +74,10 @@ export const PlanetImage = styled.figure`
 export const Tabs = styled.nav`
 	width: 100%;
 
+	@media (max-width: 1082px) {
+		width: max-content;
+	}
+
 	ul {
 		display: flex;
 		gap: 2rem;
@@ -59,7 +87,7 @@ export const Tabs = styled.nav`
 export const Tab = styled.li<Props>`
 	display: flex;
 	flex-direction: column;
-	color: ${({ theme }) => theme.colors.text};
+	color: ${(props) => props.theme.colors.text};
 
 	&::after {
 		content: " ";
@@ -97,7 +125,12 @@ export const Description = styled.div`
 export const AdditionalInfo = styled.div`
 	width: 100%;
 	display: flex;
-	gap: 3rem;
+	gap: 4rem;
+
+	@media (max-width: 1082px) {
+		justify-content: space-around;
+		gap: 1rem;
+	}
 
 	.info {
 		display: flex;

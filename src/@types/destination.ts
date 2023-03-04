@@ -1,9 +1,6 @@
 export interface Destiny {
 	name: string;
-	images: {
-		png: string;
-		webp: string;
-	};
+	imageUrl: string;
 	description: string;
 	distance: string;
 	travel: string;

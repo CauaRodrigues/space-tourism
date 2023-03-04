@@ -15,17 +15,17 @@ export const Layout: React.FC = () => {
 
 	useEffect(() => {
 		const verifyRoute = () => {
-			switch (pathname) {
-				case "/":
+			switch (pathname.split("/", 2)[1]) {
+				case "":
 					setImage(bgHome);
 					break;
-				case "/destination":
+				case "destination":
 					setImage(bgDestination);
 					break;
-				case "/crew":
+				case "crew":
 					setImage(bgCrew);
 					break;
-				case "/technology":
+				case "technology":
 					setImage(bgTechnology);
 					break;
 			}

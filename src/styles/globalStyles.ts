@@ -64,13 +64,13 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.primary};
     text-transform: uppercase;
     font-weight: 400;
-    font-size: min(2rem, 4vw);
+    font-size: min(2rem, 5vw);
   }
 
   span.sub--2 {
     color: ${({ theme }) => theme.colors.text};
     text-transform: uppercase;
-    font-size: min(0.9rem, 2vw);
+    font-size: min(0.9rem, 3vw);
     font-weight: 400;
     letter-spacing: 2.3625px;
   }

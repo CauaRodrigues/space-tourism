@@ -12,7 +12,7 @@ export const Router = createBrowserRouter([
 				element: <Home />,
 			},
 			{
-				path: "/destination",
+				path: "/destination/:destiny?",
 				element: <Destination />,
 			},
 			{
