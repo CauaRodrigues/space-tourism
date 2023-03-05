@@ -4,6 +4,7 @@ import { Link, useMatches } from "react-router-dom";
 import { ItemLink, Menu } from "./navbar.styled";
 import { LinksTypes } from "../../@types/links";
 import MediaQuery from "react-responsive";
+import { sizes } from "../../styles/sizes";
 
 export const NavBar: React.FC = () => {
 	const [, { pathname }] = useMatches();
@@ -25,7 +26,7 @@ export const NavBar: React.FC = () => {
 							return (
 								<ItemLink className="nav-text" active={active} key={index}>
 									<Link to={path}>
-										<MediaQuery minWidth={1000}>
+										<MediaQuery minWidth={sizes.tablet}>
 											<span className="stage">0{index} </span>
 										</MediaQuery>
 										{name}

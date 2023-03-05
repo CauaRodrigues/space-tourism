@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { sizes } from "../../styles/sizes";
 
 export const Header = styled.header`
 	width: 100%;
@@ -6,6 +7,10 @@ export const Header = styled.header`
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
+
+	@media (max-width: ${sizes.tablet}px) {
+		margin: 0;
+	}
 
 	.content {
 		width: 100%;

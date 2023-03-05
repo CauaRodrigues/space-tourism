@@ -5,6 +5,7 @@ import { Header as HeaderComponent } from "./header.styled";
 import { NavBar } from "../NavBar";
 import { ReactComponent as Logo } from "../../assets/shared/logo.svg";
 import { ReactComponent as Menu } from "../../assets/shared/icon-hamburger.svg";
+import { sizes } from "../../styles/sizes";
 
 export const Header: React.FC = () => {
 	return (
@@ -12,15 +13,15 @@ export const Header: React.FC = () => {
 			<div className="content">
 				<Logo className="logo" />
 
-				<MediaQuery minWidth={1000}>
+				<MediaQuery minWidth={sizes.tablet}>
 					<span className="divider"></span>
 				</MediaQuery>
 
-				<MediaQuery minWidth={501}>
+				<MediaQuery minWidth={sizes.mobile}>
 					<NavBar />
 				</MediaQuery>
 
-				<MediaQuery maxWidth={500}>
+				<MediaQuery maxWidth={sizes.mobile}>
 					<Menu className="menuHamburguer" />
 				</MediaQuery>
 			</div>

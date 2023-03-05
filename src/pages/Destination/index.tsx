@@ -39,7 +39,7 @@ const Destination: React.FC = () => {
 	return (
 		<ContainerDestination>
 			<h5>
-				<span className="stage">01</span> Pick your destination
+				<span className="stage">01</span>Pick your destination
 			</h5>
 
 			<section className="content">

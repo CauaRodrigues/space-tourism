@@ -1,27 +1,8 @@
 import styled from "styled-components";
 import { Props } from "../../@types/activeProps";
+import { MainContainer } from "../../styles/components";
 
-export const ContainerDestination = styled.article`
-	width: 100%;
-	padding: 3rem 12px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 4rem;
-
-	h5 {
-		width: 70%;
-
-		@media (max-width: 1082px) {
-			width: 95%;
-		}
-
-		.stage {
-			opacity: 0.25;
-		}
-	}
-
+export const ContainerDestination = styled(MainContainer)`
 	section.content {
 		width: 80%;
 		display: flex;
@@ -88,6 +69,7 @@ export const Tab = styled.li<Props>`
 	display: flex;
 	flex-direction: column;
 	color: ${(props) => props.theme.colors.text};
+	cursor: default;
 
 	&::after {
 		content: " ";
