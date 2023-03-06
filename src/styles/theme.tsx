@@ -9,17 +9,6 @@ export const theme: DefaultTheme = {
 		blurEffect: "rgba(255, 255, 255, 0.06)",
 		divider: "#383B4B",
 	},
-	textSize: {
-		h1: 150,
-		h2: 100,
-		h3: 56,
-		h4: 32,
-		h5: 28,
-		sub1: 28,
-		sub2: 14,
-		navText: 16,
-		bodyText: 18,
-	},
 	sizes: {
 		tablet: 1000,
 		mobile: 500,
