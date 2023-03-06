@@ -20,6 +20,13 @@ export const ContainerDestination = styled(MainContainer)`
 			width: 100%;
 		}
 
+		figure {
+			width: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
 		.content--info {
 			width: 40%;
 
@@ -43,13 +50,6 @@ export const ContainerDestination = styled(MainContainer)`
 			}
 		}
 	}
-`;
-
-export const PlanetImage = styled.figure`
-	width: 50%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 `;
 
 export const Tabs = styled.nav`
@@ -98,10 +98,6 @@ export const Tab = styled.li<Props>`
 			}
 		`;
 	}}
-`;
-
-export const Description = styled.div`
-	width: 100%;
 `;
 
 export const AdditionalInfo = styled.div`

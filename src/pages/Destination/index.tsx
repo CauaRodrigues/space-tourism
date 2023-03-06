@@ -3,14 +3,7 @@ import { Destiny } from "../../@types/destination";
 import { data } from "./data";
 import { useNavigate, useParams } from "react-router-dom";
 
-import {
-	ContainerDestination,
-	Description,
-	Tab,
-	Tabs,
-	PlanetImage,
-	AdditionalInfo,
-} from "./page.styled";
+import { ContainerDestination, Tab, Tabs, AdditionalInfo } from "./page.styled";
 
 const Destination: React.FC = () => {
 	const { destiny } = useParams();
@@ -43,12 +36,12 @@ const Destination: React.FC = () => {
 			</h5>
 
 			<section className="content">
-				<PlanetImage>
+				<figure>
 					<img
 						src={destination.imageUrl}
 						alt={`Destination: ${destination.name}`}
 					/>
-				</PlanetImage>
+				</figure>
 
 				<div className="content--info">
 					<Tabs>
@@ -84,11 +77,11 @@ const Destination: React.FC = () => {
 						</ul>
 					</Tabs>
 
-					<Description>
+					<div>
 						<h2>{destination.name}</h2>
 
 						<p>{destination.description}</p>
-					</Description>
+					</div>
 
 					<span className="line--divider"></span>
 
