@@ -38,38 +38,40 @@ export const GlobalStyle = createGlobalStyle`
 
   /* Texts and fonts */
   h1 { 
-    text-transform: uppercase;
     font-size: min(9rem, 19vw);
     font-weight: 400;
   }
   
   h2 { 
-    text-transform: uppercase;
     font-size: min(6rem, 16vw);
     font-weight: 400;
   }
+  
+  h3 {
+    font-size: min(3.5rem, 13vw);
+    font-weight: 400;
+  }
+  
+  h4 { 
+    font-size: min(2.5rem, 8vw);
+    font-weight: 400;
+    opacity: 0.5;
+  }
 
   h5 {
-    text-transform: uppercase;
     font-size: min(2rem, 5vw); 
     font-weight: 300;
     letter-spacing: 4.725px;
   }
 
-
-  h3 { font-size: ${({ theme: { textSize } }) => textSize?.h3}px; }
-  h4 { font-size: ${({ theme: { textSize } }) => textSize?.h4}px; }
-
   span.sub--1 {
     color: ${({ theme }) => theme.colors.primary};
-    text-transform: uppercase;
     font-weight: 400;
     font-size: min(2rem, 5vw);
   }
 
   span.sub--2 {
     color: ${({ theme }) => theme.colors.text};
-    text-transform: uppercase;
     font-size: min(0.9rem, 3vw);
     font-weight: 400;
     letter-spacing: 2.3625px;
@@ -89,10 +91,13 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   li.nav-text {
-    text-transform: uppercase;
 		font-size: min(1.1rem, 3vw);
 		font-weight: 400;
     letter-spacing: 1.7px;
+  }
+
+  h1, h2, h3, h4, h5, span.sub--1, span.sub--2, li.nav-text {
+    text-transform: uppercase;
   }
 
   h1, h2, h3, h4, span.sub--1 {
