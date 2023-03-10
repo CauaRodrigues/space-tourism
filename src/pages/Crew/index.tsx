@@ -11,10 +11,6 @@ const Crew: React.FC = () => {
 			</h5>
 
 			<section className="content">
-				<figure>
-					<img src={data[0].imageUrl} alt={`crew: ${data[0].name}`} />
-				</figure>
-
 				<div className="content--info">
 					<div className="description">
 						<h4>Commander</h4>
@@ -28,15 +24,19 @@ const Crew: React.FC = () => {
 						</p>
 					</div>
 
-					<TabsCircle className="tabs">
+					<TabsCircle>
 						<ul>
-							<Tab />
-							<Tab />
-							<Tab />
-							<Tab />
+							<Tab active={true} />
+							<Tab active={false} />
+							<Tab active={false} />
+							<Tab active={false} />
 						</ul>
 					</TabsCircle>
 				</div>
+
+				<figure>
+					<img src={data[0].imageUrl} alt={`crew: ${data[0].name}`} />
+				</figure>
 			</section>
 		</ContainerCrew>
 	);
