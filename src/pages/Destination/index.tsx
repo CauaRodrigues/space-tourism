@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Destiny } from "../../@types/destination";
+import { DestinyTypes } from "../../@types/tabs";
 import { data } from "./data";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -9,7 +9,8 @@ const Destination: React.FC = () => {
 	const { destiny } = useParams();
 	const navigate = useNavigate();
 	const [Moon, Mars, Europa, Titan] = data;
-	const [destination, setDestination] = useState<Destiny>(() => {
+
+	const [destination, setDestination] = useState<DestinyTypes>(() => {
 		switch (destiny?.toLowerCase()) {
 			case "mars":
 				return Mars;
@@ -22,7 +23,7 @@ const Destination: React.FC = () => {
 		}
 	});
 
-	const handlerDestination = (destiny: Destiny) => {
+	const handlerDestination = (destiny: DestinyTypes) => {
 		if (destiny) {
 			setDestination(destiny);
 			navigate(`/destination/${destiny.name.toLowerCase()}`);

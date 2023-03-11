@@ -1,8 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { data } from "./data";
 import { ContainerCrew, Tab, TabsCircle } from "./page.styled";
+import { CrewTypes } from "../../@types/tabs";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Crew: React.FC = () => {
+	const { person } = useParams();
+	const navigate = useNavigate();
+	const [Commander, Specialist, Pilot, Engineer] = data;
+
+	const [crew, setCrew] = useState<CrewTypes>(() => {
+		switch (person?.toLowerCase()) {
+			case "specialist":
+				return Specialist;
+			case "pilot":
+				return Pilot;
+			case "engineer":
+				return Engineer;
+			default:
+				return Commander;
+		}
+	});
+
+	const handlerPerson = (person: CrewTypes) => {
+		if (person) {
+			setCrew(person);
+			navigate(`/crew/${person.nameID.toLowerCase()}`);
+		}
+	};
+
 	return (
 		<ContainerCrew>
 			<h5>
@@ -13,29 +39,45 @@ const Crew: React.FC = () => {
 			<section className="content">
 				<div className="content--info">
 					<div className="description">
-						<h4>Commander</h4>
+						<h4>{crew.role}</h4>
 
-						<h3>Douglas Hurley</h3>
+						<h3>{crew.name}</h3>
 
-						<p>
-							Douglas Gerald Hurley is an American engineer, former Marine Corps
-							pilot and former NASA astronaut. He launched into space for the
-							third time as commander of Crew Dragon Demo-2.
-						</p>
+						<p>{crew.bio}</p>
 					</div>
 
 					<TabsCircle>
 						<ul>
-							<Tab active={true} />
-							<Tab active={false} />
-							<Tab active={false} />
-							<Tab active={false} />
+							<Tab
+								active={crew.nameID === "commander"}
+								onClick={() => {
+									handlerPerson(Commander);
+								}}
+							/>
+							<Tab
+								active={crew.nameID === "specialist"}
+								onClick={() => {
+									handlerPerson(Specialist);
+								}}
+							/>
+							<Tab
+								active={crew.nameID === "pilot"}
+								onClick={() => {
+									handlerPerson(Pilot);
+								}}
+							/>
+							<Tab
+								active={crew.nameID === "engineer"}
+								onClick={() => {
+									handlerPerson(Engineer);
+								}}
+							/>
 						</ul>
 					</TabsCircle>
 				</div>
 
 				<figure>
-					<img src={data[0].imageUrl} alt={`crew: ${data[0].name}`} />
+					<img src={crew.imageUrl} alt={`person: ${crew.name}`} />
 				</figure>
 			</section>
 		</ContainerCrew>

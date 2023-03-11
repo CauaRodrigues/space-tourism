@@ -16,11 +16,11 @@ export const Router = createBrowserRouter([
 				element: <Destination />,
 			},
 			{
-				path: "/technology",
+				path: "/technology/:technology?",
 				element: <Technology />,
 			},
 			{
-				path: "/crew",
+				path: "/crew/:person?",
 				element: <Crew />,
 			},
 		],
