@@ -48,7 +48,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   h3 {
-    font-size: min(3.5rem, 10vw);
+    font-size: min(3.5rem, 9vw);
     font-weight: 400;
   }
   

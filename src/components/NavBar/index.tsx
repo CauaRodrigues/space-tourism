@@ -16,12 +16,14 @@ export const NavBar: React.FC = () => {
 		{ name: "technology", path: "/technology" },
 	];
 
+	console.log(pathname.split("/", 2)[0]);
+
 	return (
 		<Menu>
 			<ul>
 				{links
 					? links.map(({ name, path }, index) => {
-							let active = pathname === path;
+							let active = pathname.split("/", 2)[1] === name;
 
 							return (
 								<ItemLink className="nav-text" active={active} key={index}>
