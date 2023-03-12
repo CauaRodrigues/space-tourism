@@ -1,41 +1,74 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, useMatches } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
 
 import { Header } from "../Header";
 import { ContainerMain } from "./layout.styled";
 
-import bgHome from "../../assets/home/background-home-desktop.jpg";
-import bgCrew from "../../assets/crew/background-crew-desktop.png";
-import bgDestination from "../../assets/destination/background-destination-desktop.png";
-import bgTechnology from "../../assets/technology/background-technology-desktop.png";
+import { BG_HOME, BG_DESTINATION, BG_CREW, BG_TECHNOLOGY } from "../../assets";
 
 export const Layout: React.FC = () => {
 	const [, { pathname }] = useMatches();
-	const [image, setImage] = useState<string>(bgHome);
+	const [bgImage, setBgImage] = useState<string>(BG_HOME.desktop);
+
+	const isTablet = useMediaQuery({ query: "(max-width: 730px" });
+	const isMobile = useMediaQuery({ query: "(max-width: 505px" });
 
 	useEffect(() => {
 		const verifyRoute = () => {
 			switch (pathname.split("/", 2)[1]) {
 				case "":
-					setImage(bgHome);
+					setBgImage(() => {
+						if (isTablet) {
+							return BG_HOME.tablet;
+						} else if (isMobile) {
+							return BG_HOME.mobile;
+						} else {
+							return BG_HOME.desktop;
+						}
+					});
 					break;
 				case "destination":
-					setImage(bgDestination);
+					setBgImage(() => {
+						if (isTablet) {
+							return BG_DESTINATION.tablet;
+						} else if (isMobile) {
+							return BG_DESTINATION.mobile;
+						} else {
+							return BG_DESTINATION.desktop;
+						}
+					});
 					break;
 				case "crew":
-					setImage(bgCrew);
+					setBgImage(() => {
+						if (isTablet) {
+							return BG_CREW.tablet;
+						} else if (isMobile) {
+							return BG_CREW.mobile;
+						} else {
+							return BG_CREW.desktop;
+						}
+					});
 					break;
 				case "technology":
-					setImage(bgTechnology);
+					setBgImage(() => {
+						if (isTablet) {
+							return BG_TECHNOLOGY.tablet;
+						} else if (isMobile) {
+							return BG_TECHNOLOGY.mobile;
+						} else {
+							return BG_TECHNOLOGY.desktop;
+						}
+					});
 					break;
 			}
 		};
 
 		verifyRoute();
-	}, [pathname]);
+	}, [isMobile, isTablet, pathname]);
 
 	return (
-		<ContainerMain image={`${image}`}>
+		<ContainerMain image={`${bgImage}`}>
 			<Header />
 
 			<Outlet />
