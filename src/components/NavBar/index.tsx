@@ -16,17 +16,20 @@ export const NavBar: React.FC = () => {
 		{ name: "technology", path: "/technology" },
 	];
 
-	console.log(pathname.split("/", 2)[0]);
-
 	return (
 		<Menu>
 			<ul>
 				{links
 					? links.map(({ name, path }, index) => {
-							let active = pathname.split("/", 2)[1] === name;
+							let active = () => {
+								if (name === "home") {
+									return pathname === path;
+								}
+								return pathname.split("/", 2)[1] === name;
+							};
 
 							return (
-								<ItemLink className="nav-text" active={active} key={index}>
+								<ItemLink className="nav-text" active={active()} key={index}>
 									<Link to={path}>
 										<MediaQuery minWidth={sizes.tablet}>
 											<span className="stage">0{index} </span>
