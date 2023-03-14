@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import MediaQuery from "react-responsive";
 
-import { Header as HeaderComponent } from "./header.styled";
+import { Styled as S } from "./header.styled";
 import { NavBar } from "../NavBar";
 import { ReactComponent as Logo } from "../../assets/shared/logo.svg";
-import { ReactComponent as Menu } from "../../assets/shared/icon-hamburger.svg";
 import { sizes } from "../../styles/sizes";
+import { Burger } from "../Burger";
+import { Menu } from "../Menu";
 
 export const Header: React.FC = () => {
+	const [openMenu, setOpenMenu] = useState(false);
+
 	return (
-		<HeaderComponent>
+		<S.Header>
 			<div className="content">
 				<Logo className="logo" />
 
@@ -22,9 +25,10 @@ export const Header: React.FC = () => {
 				</MediaQuery>
 
 				<MediaQuery maxWidth={sizes.mobile}>
-					<Menu className="menuHamburguer" />
+					<Burger open={openMenu} setOpen={setOpenMenu} />
+					<Menu open={openMenu} />
 				</MediaQuery>
 			</div>
-		</HeaderComponent>
+		</S.Header>
 	);
 };

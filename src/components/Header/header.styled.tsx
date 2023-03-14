@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { sizes } from "../../styles/sizes";
 
-export const Header = styled.header`
+const Header = styled.header`
 	width: 100%;
 	margin: 1.5rem 0;
 	display: flex;
@@ -38,3 +38,5 @@ export const Header = styled.header`
 		margin-right: 2rem;
 	}
 `;
+
+export const Styled = { Header };
