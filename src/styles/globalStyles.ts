@@ -90,13 +90,13 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 700;
   }
 
-  li.nav-text {
+  .nav-text {
 		font-size: min(1.1rem, 3vw);
 		font-weight: 400;
     letter-spacing: 1.7px;
   }
 
-  h1, h2, h3, h4, h5, span.sub--1, span.sub--2, li.nav-text {
+  h1, h2, h3, h4, h5, span.sub--1, span.sub--2, .nav-text {
     text-transform: uppercase;
   }
 
@@ -104,7 +104,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Bellefair', serif;
   }
   
-  h5, span.sub--2, li.nav-text {
+  h5, span.sub--2, .nav-text {
     font-family: 'Barlow Condensed', sans-serif;
   }
 `;
