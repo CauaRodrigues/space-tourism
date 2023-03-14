@@ -5,7 +5,7 @@ const ContainerTechnology = styled(MainContainer)`
 	padding-right: 0;
 
 	@media (max-width: 1000px) {
-		padding: 0;
+		padding-left: 0;
 	}
 
 	.container--content {
@@ -35,8 +35,13 @@ const ContainerTechnology = styled(MainContainer)`
 			}
 
 			@media (max-width: 1000px) {
+				width: 95%;
+				padding-bottom: 1rem;
 				order: 1;
 				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
 			}
 		}
 
@@ -58,8 +63,8 @@ const TabsNumbered = styled.nav`
 	}
 
 	span {
-		width: 60px;
-		height: 60px;
+		width: min(70px, 20vw);
+		height: min(70px, 20vw);
 
 		display: flex;
 		align-items: center;
@@ -71,7 +76,7 @@ const TabsNumbered = styled.nav`
 
 		color: ${({ theme }) => theme.colors.primary};
 		text-align: center;
-		font-size: min(2rem, 6vw);
+		font-size: min(2rem, 8vw);
 		font-weight: 400;
 		font-family: "Bellefair", serif;
 		cursor: pointer;
@@ -79,6 +84,10 @@ const TabsNumbered = styled.nav`
 `;
 
 const Image = styled.picture`
+	@media (max-width: 1000px) {
+		width: 100%;
+	}
+
 	img {
 		@media (max-width: 1000px) {
 			width: 100%;

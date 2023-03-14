@@ -16,6 +16,12 @@ export const MainContainer = styled.article`
 			width: 95%;
 		}
 
+		@media (max-width: 500px) {
+			width: max-content;
+			align-self: center;
+			text-align: center;
+		}
+
 		.stage {
 			opacity: 0.25;
 
