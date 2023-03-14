@@ -1,12 +1,8 @@
 import React from "react";
 import { Styled as S } from "./burger.styled";
+import { BurgerProps } from "../../@types/BurgerProps";
 
-export type PropsTypes = {
-	open: boolean;
-	setOpen?: any;
-};
-
-export const Burger: React.FC<PropsTypes> = ({ open, setOpen }) => {
+export const Burger: React.FC<BurgerProps> = ({ open, setOpen }) => {
 	return (
 		<S.Burger open={open} onClick={() => setOpen(!open)}>
 			<div />

@@ -1,8 +1,7 @@
 import styled from "styled-components";
+import { BurgerProps } from "../../@types/BurgerProps";
 
-import { PropsTypes } from ".";
-
-const Menu = styled.nav<PropsTypes>`
+const Menu = styled.nav<BurgerProps>`
 	height: 100vh;
 	width: 70%;
 	padding: 2rem;
@@ -12,7 +11,7 @@ const Menu = styled.nav<PropsTypes>`
 	top: 0;
 	right: 0;
 
-	display: flex;
+	display: ${({ open }) => (open ? "flex" : "none")};
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;

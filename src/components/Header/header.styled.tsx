@@ -22,6 +22,10 @@ const Header = styled.header`
 
 	.logo {
 		margin-left: 2rem;
+
+		@media (max-width: ${sizes.mobile}px) {
+			margin-top: 1.3rem;
+		}
 	}
 
 	.divider {
@@ -32,10 +36,6 @@ const Header = styled.header`
 		position: relative;
 		left: 42px;
 		z-index: 10;
-	}
-
-	.menuHamburguer {
-		margin-right: 2rem;
 	}
 `;
 

@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { PropsTypes } from ".";
+import { BurgerProps } from "../../@types/BurgerProps";
 
-const Burger = styled.button<PropsTypes>`
+const Burger = styled.button<BurgerProps>`
 	width: 2rem;
 	height: 2rem;
 

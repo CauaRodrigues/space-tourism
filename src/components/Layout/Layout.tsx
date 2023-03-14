@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, useMatches } from "react-router-dom";
-import { useMediaQuery } from "react-responsive";
+import MediaQuery, { useMediaQuery } from "react-responsive";
 
 import { Header } from "../Header";
 import { ContainerMain } from "./layout.styled";
 
 import { BG_HOME, BG_DESTINATION, BG_CREW, BG_TECHNOLOGY } from "../../assets";
+import { sizes } from "../../styles/sizes";
+import { Burger } from "../Burger";
+import { Menu } from "../Menu";
 
 export const Layout: React.FC = () => {
 	const [, { pathname }] = useMatches();
@@ -67,11 +70,18 @@ export const Layout: React.FC = () => {
 		verifyRoute();
 	}, [isMobile, isTablet, pathname]);
 
+	const [openMenu, setOpenMenu] = useState(false);
+
 	return (
 		<ContainerMain image={`${bgImage}`}>
 			<Header />
 
 			<Outlet />
+
+			<MediaQuery maxWidth={sizes.mobile}>
+				<Burger open={openMenu} setOpen={setOpenMenu} />
+				<Menu open={openMenu} setOpen={setOpenMenu} />
+			</MediaQuery>
 		</ContainerMain>
 	);
 };
