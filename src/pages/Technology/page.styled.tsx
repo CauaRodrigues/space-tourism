@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { MainContainer } from "../../styles/components";
+import { Props } from "../../@types/activeProps";
 
 const ContainerTechnology = styled(MainContainer)`
 	padding-right: 0;
@@ -61,26 +62,28 @@ const TabsNumbered = styled.nav`
 		order: 1;
 		flex-direction: row;
 	}
+`;
 
-	span {
-		width: min(70px, 20vw);
-		height: min(70px, 20vw);
+const TabNumbered = styled.span<Props>`
+	width: min(70px, 20vw);
+	height: min(70px, 20vw);
 
-		display: flex;
-		align-items: center;
-		justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-		background-color: transparent;
-		border: 1px solid ${({ theme }) => theme.colors.primary};
-		border-radius: 50%;
+	background-color: ${({ theme, active }) =>
+		active ? theme.colors.primary : "transparent"};
+	border: 1px solid ${({ theme }) => theme.colors.primary};
+	border-radius: 50%;
 
-		color: ${({ theme }) => theme.colors.primary};
-		text-align: center;
-		font-size: min(2rem, 8vw);
-		font-weight: 400;
-		font-family: "Bellefair", serif;
-		cursor: pointer;
-	}
+	color: ${({ theme, active }) =>
+		active ? theme.colors.bg : theme.colors.primary};
+	text-align: center;
+	font-size: min(2rem, 8vw);
+	font-weight: 400;
+	font-family: "Bellefair", serif;
+	cursor: pointer;
 `;
 
 const Image = styled.picture`
@@ -95,4 +98,9 @@ const Image = styled.picture`
 	}
 `;
 
-export const Styleds = { ContainerTechnology, TabsNumbered, Image };
+export const Styleds = {
+	ContainerTechnology,
+	TabsNumbered,
+	TabNumbered,
+	Image,
+};

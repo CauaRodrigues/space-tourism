@@ -13,3 +13,13 @@ export interface CrewTypes {
 	bio: string;
 	role: string;
 }
+
+export interface TechTypes {
+	nameId: string;
+	name: string;
+	imagesUrl: {
+		portrait: string;
+		landscape: string;
+	};
+	description: string;
+}

@@ -16,7 +16,7 @@ export const Router = createBrowserRouter([
 				element: <Destination />,
 			},
 			{
-				path: "/technology/:technology?",
+				path: "/technology/:techNameUrl?",
 				element: <Technology />,
 			},
 			{

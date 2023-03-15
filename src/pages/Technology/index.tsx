@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { data } from "./data";
 import { Styleds as S } from "./page.styled";
 import { sizes } from "../../styles/sizes";
+import { TechTypes } from "../../@types/tabs";
 
 const Technology: React.FC = () => {
-	const sla = data[0];
+	const { techNameUrl } = useParams();
+	const navigate = useNavigate();
+	const [LaunchVehicle, Spaceport, SpaceCapsule] = data;
+
+	const [tech, setTech] = useState<TechTypes>(() => {
+		switch (techNameUrl?.toLowerCase()) {
+			case "spaceport":
+				return Spaceport;
+			case "space-capsule":
+				return SpaceCapsule;
+			default:
+				return LaunchVehicle;
+		}
+	});
+
+	const handlerTech = (tech: TechTypes) => {
+		if (tech) {
+			setTech(tech);
+			navigate(`/technology/${tech.nameId}`);
+		}
+	};
 
 	return (
 		<S.ContainerTechnology>
@@ -15,31 +37,40 @@ const Technology: React.FC = () => {
 			<section className="container--content">
 				<div className="content">
 					<S.TabsNumbered>
-						<span>1</span>
-						<span>2</span>
-						<span>3</span>
+						<S.TabNumbered
+							active={tech.nameId === "launch-vehicle"}
+							onClick={() => handlerTech(LaunchVehicle)}
+						>
+							1
+						</S.TabNumbered>
+						<S.TabNumbered
+							active={tech.nameId === "spaceport"}
+							onClick={() => handlerTech(Spaceport)}
+						>
+							2
+						</S.TabNumbered>
+						<S.TabNumbered
+							active={tech.nameId === "space-capsule"}
+							onClick={() => handlerTech(SpaceCapsule)}
+						>
+							3
+						</S.TabNumbered>
 					</S.TabsNumbered>
 
 					<div className="info">
 						<span className="nav-text">THE TERMINOLOGY…</span>
 
-						<h3>LAUNCH VEHICLE</h3>
+						<h3>{tech.name}</h3>
 
-						<p>
-							A launch vehicle or carrier rocket is a rocket-propelled vehicle
-							used to carry a payload from Earth's surface to space, usually to
-							Earth orbit or beyond. Our WEB-X carrier rocket is the most
-							powerful in operation. Standing 150 metres tall, it's quite an
-							awe-inspiring sight on the launch pad!
-						</p>
+						<p>{tech.description}</p>
 					</div>
 
 					<S.Image>
 						<source
-							srcSet={sla.imagesUrl.landscape}
+							srcSet={tech.imagesUrl.landscape}
 							media={`(max-width: ${sizes.tablet}px)`}
 						/>
-						<img src={sla.imagesUrl.portrait} alt={sla.name} />
+						<img src={tech.imagesUrl.portrait} alt={tech.name} />
 					</S.Image>
 				</div>
 			</section>
