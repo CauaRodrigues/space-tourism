@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DestinyTypes } from "../../@types/tabs";
 import { data } from "./data";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { ContainerDestination, Tab, Tabs, AdditionalInfo } from "./page.styled";
+import changePageTitle from "../../utils/changePageTitle";
 
 const Destination: React.FC = () => {
 	const { destiny } = useParams();
@@ -29,6 +30,10 @@ const Destination: React.FC = () => {
 			navigate(`/destination/${destiny.name.toLowerCase()}`);
 		}
 	};
+
+	useEffect(() => {
+		changePageTitle("Destination");
+	}, []);
 
 	return (
 		<ContainerDestination>

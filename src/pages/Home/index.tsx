@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ButtonExplore, ContainerHome } from "./page.styled";
 import { Link } from "react-router-dom";
 import { Footer } from "../../components/Footer";
+import changePageTitle from "../../utils/changePageTitle";
 
 const Home: React.FC = () => {
+	useEffect(() => {
+		changePageTitle();
+	}, []);
+
 	return (
 		<>
 			<ContainerHome>

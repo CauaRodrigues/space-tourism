@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { data } from "./data";
 import { ContainerCrew, Tab, TabsCircle } from "./page.styled";
 import { CrewTypes } from "../../@types/tabs";
 import { useNavigate, useParams } from "react-router-dom";
+import changePageTitle from "../../utils/changePageTitle";
 
 const Crew: React.FC = () => {
 	const { person } = useParams();
@@ -28,6 +29,10 @@ const Crew: React.FC = () => {
 			navigate(`/crew/${person.nameID.toLowerCase()}`);
 		}
 	};
+
+	useEffect(() => {
+		changePageTitle("Crew");
+	}, []);
 
 	return (
 		<ContainerCrew>

@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { data } from "./data";
 import { Styleds as S } from "./page.styled";
 import { sizes } from "../../styles/sizes";
 import { TechTypes } from "../../@types/tabs";
+import changePageTitle from "../../utils/changePageTitle";
 
 const Technology: React.FC = () => {
 	const { techNameUrl } = useParams();
@@ -27,6 +28,10 @@ const Technology: React.FC = () => {
 			navigate(`/technology/${tech.nameId}`);
 		}
 	};
+
+	useEffect(() => {
+		changePageTitle("Technology");
+	}, []);
 
 	return (
 		<S.ContainerTechnology>
