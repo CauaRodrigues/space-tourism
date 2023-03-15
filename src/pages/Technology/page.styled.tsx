@@ -74,7 +74,7 @@ const TabNumbered = styled.span<Props>`
 
 	background-color: ${({ theme, active }) =>
 		active ? theme.colors.primary : "transparent"};
-	border: 1px solid ${({ theme }) => theme.colors.primary};
+	border: 1px solid rgba(255, 255, 255, 0.2);
 	border-radius: 50%;
 
 	color: ${({ theme, active }) =>
@@ -84,6 +84,10 @@ const TabNumbered = styled.span<Props>`
 	font-weight: 400;
 	font-family: "Bellefair", serif;
 	cursor: pointer;
+
+	&:hover {
+		border-color: ${({ theme }) => theme.colors.primary};
+	}
 `;
 
 const Image = styled.picture`
